@@ -24,9 +24,9 @@ helloWorld()
 // const implicit = word => `This arrow function has ${word} return`
 // console.log(implicit('implicit'))
 
-// const jsNinja = ninja => `I am a Javascript ${ninja}`
+let jsNinja = ninja => `I am a Javascript ${ninja}`
  
-// console.log(jsNinja(ninja))
+// console.log(jsNinja('ninja'))
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -38,7 +38,7 @@ helloWorld()
 function printName (name){
   console.log (name)
 }
-printName("Cameron")
+// printName("Cameron")
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -67,12 +67,12 @@ printName("Cameron")
 */
 // const implicit = word => `This arrow function has ${word} return`
 // console.log(implicit('implicit'))
-const compareNums = (num1, num2) => {
-  if(num1>num2)
-  console.log(num1)
-  else console.log (num2)
-}
-compareNums(3,5)
+// const compareNums = (num1, num2) => {
+//   if(num1>num2)
+//   console.log(num1)
+//   else console.log (num2)
+// }
+// compareNums(3,5)
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -92,8 +92,8 @@ function add(num1, num2){
   return (withNum+withNum2)
   
 }
-const sum = add(3,8)
-console.log(sum)
+// const sum = add(3,8)
+// console.log(sum)
 
 
 ////////////////// PROBLEM 7 ////////////////////
@@ -108,7 +108,7 @@ const exclaim = function(str) {
 }
 
 
-console.log('arrow')
+// console.log('arrow')
 // console.log('declaration')
 // console.log('expression')
 
@@ -125,7 +125,7 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
-console.log('arrow')
+// console.log('arrow')
 // console.log('declaration')
 // console.log('expression')
 
@@ -135,7 +135,7 @@ console.log('arrow')
 
   Brownie points if you use a template string
 */
-// //const implicit = word => `This arrow function has ${word} return`
+// const implicit = word => `This arrow function has ${word} return`
 // console.log(implicit('implicit'))
 
 // const exclaimThree 
@@ -193,12 +193,12 @@ let faveColorFinder = color => {
   if(color ==='red'){
     return "Red is a great color"
   } else if(color === 'green'){
-    console.log('Green is a solid favorite color.')
+    return('Green is a solid favorite color.')
   }else if (color === 'black'){
-    console.log('So trendy.')
-  } else console.log("you need to reevaluate.")
+    return 'So trendy.'
+  } else return("you need to reevaluate.")
 }
-const colorRating = faveColorFinder('pink')
+// const colorRating = faveColorFinder('pink')
 // console.log(colorRating)
 
 ////////////////// PROBLEM 12 ////////////////////
@@ -209,7 +209,7 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
   Call the function, passing in the `namesArr` array (above).
 */
 
-function printAllNames(namesArr) {
+ function printAllNames(namesArr) {
   for(i=5; i <= namesArr.length; i++){
     console.log(namesArr)
   }}
@@ -244,11 +244,11 @@ let oddChecker = (thatsOdd(7))
 */
 
 const bestMovie = movieTitle => `${movieTitle} is the best movie ever`
-console.log(bestMovie('The bee movie'))
+// console.log(bestMovie('The bee movie'))
 
 
 ////////////////// PROBLEM 15 ////////////////////
-// let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
   Inside of the bigOrSmall function, create a new array called 'answers'. 
@@ -258,8 +258,18 @@ console.log(bestMovie('The bee movie'))
   Return the answers array inside of the function to a variable called `arrayEvaluator`.
 */
 
-//CODE HERE
-
+function bigOrSmall (arr){
+  let answers = []
+  for(let i=0; i < arr.length; i++){
+    if (arr[i] > 100)
+    answers.push("big");
+    else 
+    answers.push("small")
+  }
+  return answers;
+}
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+// console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -278,7 +288,7 @@ function theEliminator(contestants, loser){
   }
   return contestants
 }
-console.log(theEliminator(contestants, loser))
+// console.log(theEliminator(contestants, loser))
 
 
 ////////////////// PROBLEM 17 ////////////////////
@@ -288,7 +298,9 @@ let sampleString = "Hi, my name is Kylo."
   Invoke the function, passing in the sampleString (above).
 */
 
-//CODE HERE
+sampleString = sampleString.toUpperCase()
+// console.log(sampleString)
+
 
 
 ////////////////// PROBLEM 18 ////////////////////
@@ -301,6 +313,16 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+ function emailCheck(email){
+  email = String(email).trim()
+   console.log(email)
+    if (email.includes('@'))
+    return 'email verified'
+    else 
+    return 'must provide a valid email address'
+    
+   }
+  //  console.log(emailCheck('jaime123.com'))
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
@@ -308,16 +330,24 @@ let sampleString = "Hi, my name is Kylo."
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
 
-//CODE HERE
-
+function chocolateFrog(gold){
+  let x = gold / 3
+  return x
+}
+let totalFrogs = (chocolateFrog(4))
+// console.log(totalFrogs)
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
-//CODE HERE
-
+function chocolateFrog2(gold){
+  let x = gold / 3
+  return Math.floor(x)
+}
+let totalFrogs2 = (chocolateFrog2(7))
+// console.log(totalFrogs2)
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -325,11 +355,22 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
-// function checkArrayAscending (arr){
-//   let comparisonValue = arr[0]
-//   for(let i = 1)
-// }
+function checkArrayAscending (arr){
+   let comparisonValue = arr[0]
+   for(let i = 1; i <= arr.length; i++){
+    if (comparisonValue > arr[i]){
+      return false;
+    }else {
+      comparisonValue = arr[i]
+      
+      
+    }
+    return true;
+   }
 
+ }
+let frog = checkArrayAscending(sampleArray)
+// console.log(frog)
 
 ////////////////// PROBLEM 22 ////////////////////
 
